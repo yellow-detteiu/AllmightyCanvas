@@ -1,0 +1,282 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --color: #778691;
+  --color2: white;
+  --size: 20px;
+  --alpha: 50;
+  --hue: 150;
+}
+
+h1{
+  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-left: 200px; 
+}
+
+#mycanvas{
+  border-style: dotted;
+  border-color: black;
+  border-width: 5px;
+  margin-left: 20px;
+  cursor: default;
+}
+
+#selection{
+  float: right;
+  margin-right: 30px;
+}
+
+.inSelection{
+  margin-left: 5px;
+}
+
+#gallery{
+  clear: both;
+  float: left;
+  margin-left: 20px;
+}
+
+.thumbnail{
+  border: 2px solid #999;
+  margin-left: 5px;
+}
+
+progress{
+  width: 80%;
+}
+
+#patternColor, #patternColor2{
+  width: 40px;
+}
+
+#patternSize{
+  width: 40px;
+}
+
+/* ストライプ縦 */
+.stripe1 {
+  background-color: var(--color);
+  background-image:
+   linear-gradient(-90deg, var(--color2) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+}
+
+/* ストライプ横 */
+.stripe2{
+  background-color: var(--color);
+  background-image:
+   linear-gradient(var(--color2) 50%, transparent 50%,transparent 100%);
+   background-size: var(--size) var(--size);
+}
+
+/* 右斜め */
+.stripe3{
+ background-color: var(--color);
+ background-image:
+ repeating-linear-gradient(-45deg, var(--color2), var(--color2) calc(var(--size)/2), transparent 0, transparent var(--size));
+}
+
+/* 左斜め */
+.stripe4{
+background-color: var(--color);
+background-image:
+repeating-linear-gradient(45deg, var(--color2), var(--color2) calc(var(--size)/2), transparent 0, transparent var(--size));
+}
+
+/* チェック */
+.check1 {
+  background-color: var(--color2);
+  background-image:
+   linear-gradient(-90deg, var(--color) 50%, transparent 50%), linear-gradient(var(--color) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+}
+
+/* チェック斜め */
+.check2{
+  background-color: var(--color2);
+  background-image:
+    repeating-linear-gradient(-45deg, var(--color), var(--color) calc(var(--size)/2), transparent 0, transparent var(--size)), repeating-linear-gradient(45deg, var(--color), var(--color) calc(var(--size)/2), transparent 0, transparent var(--size));
+}
+
+/* 縦半透明 */
+
+/* .check3{
+  background-image:
+   linear-gradient(-90deg, rgba(63, 171, 234, calc(var(--alpha)*0.01)) 50%, transparent 50%),
+    linear-gradient(rgba(253, 68, 119, calc(var(--alpha)*0.01)) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+} */
+/* .check3{
+  background-image:
+   linear-gradient(-90deg, rgba(63, var(--hue), var(--hue), calc(var(--alpha)*0.01)) 50%, transparent 50%),
+    linear-gradient(rgba(253, calc(255/var(--hue)), calc(var(--hue)/2), calc(var(--alpha)*0.01)) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+} */
+/* .check3{
+  background-image:
+   linear-gradient(-90deg, rgba(calc(255/var(--hue)*55), calc(255/var(--hue)*255), var(--hue), calc(var(--alpha)*0.01)) 50%, transparent 50%),
+    linear-gradient(rgba(var(--hue), calc(255/var(--hue)*55), calc(255/var(--hue)*155), calc(var(--alpha)*0.01)) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+} */
+.check3{
+  background-image:
+   linear-gradient(-90deg, rgba(calc(255/var(--hue)*5), var(--hue), calc(255/var(--hue)*100), calc(var(--alpha)*0.01)) 50%, transparent 50%),
+    linear-gradient(rgba(255, calc(155/var(--hue)*10), 10, calc(var(--alpha)*0.01)) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+}
+
+/* ドット基本 */
+.dot1{
+  background-color: var(--color2);
+  background-image:
+    radial-gradient(var(--color) 30%, transparent 30%);
+  background-size: var(--size) var(--size);
+}
+
+/* ドット大 */
+.dot2{
+  background-color: var(--color2);
+  background-image:
+    radial-gradient(var(--color) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+}
+
+/* ドット斜め */
+.dot3{
+  background-color: var(--color2);
+  background-image:
+    radial-gradient(var(--color) 20%, transparent 20%),
+    radial-gradient(var(--color) 20%, transparent 20%);
+  background-size: calc(var(--size)*2) calc(var(--size)*2);
+  background-position: 0 0, var(--size) var(--size);
+}
+
+/* ドットサイズ違い */
+.dot4{
+  background-color: #fff;
+  background-image:
+    radial-gradient(var(--color) 40%, transparent 40%),
+    radial-gradient(var(--color2) 20%, transparent 20%);
+  background-size: calc(var(--size)*2) calc(var(--size)*2);
+  background-position: 0 0, var(--size) var(--size);
+}
+
+.circle1 {
+  background: radial-gradient(4rem,
+    rgba(255,255,255,0) 80%, 
+    var(--color) 80%, var(--color) 99%, 
+    rgba(255,255,255, 0) 
+    ) 0 0,
+    radial-gradient(4rem,
+    rgba(255,255,255,0) 80%, 
+    var(--color) 80%, var(--color) 99%,  
+    rgba(255,255,255, 0) 
+    ) 4em 4em,
+    radial-gradient(4.7rem,
+    rgba(255,255,255,0) 50%, 
+    var(--color2) 50%,
+    var(--color2) 75%, var(--color2) 99%, 
+    rgba(255,255,255, 0) 
+    ) 4em 4em,
+    radial-gradient(4.7rem,
+    rgba(255,255,255,0) 50%, 
+    var(--color2) 50%,
+    #F5FCD0 75%, var(--color2) 99%, 
+    rgba(255,255,255, 0) 
+    ) 0 0;
+  background-size: 8rem 8rem;
+  background-color: #F5FCD0;
+  }
+
+/* 矢印 */
+.arrow1{
+  /* background:
+linear-gradient(45deg, var(--color) 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, var(--color) 45px, transparent 45px,transparent 91px, var(--color2) 91px, var(--color2) 135px, transparent 135px),
+linear-gradient(-45deg, var(--color) 23px, transparent 23px, transparent 68px,var(--color) 68px,var(--color) 113px,transparent 113px,transparent 158px,var(--color) 158px);
+background-color:var(--color2);
+background-size: 128px 128px;
+} */
+background:
+linear-gradient(45deg, var(--color) var(--size), transparent var(--size))calc(var(--size)*1.42) calc(var(--size)*1.42),
+linear-gradient(45deg, var(--color) var(--size), transparent var(--size),transparent calc(var(--size)*2.02), var(--color2) calc(var(--size)*2.02), var(--color2) calc(var(--size)*3), transparent calc(var(--size)*3)),
+linear-gradient(-45deg, var(--color) calc(var(--size)*0.51), transparent calc(var(--size)*0.51), transparent calc(var(--size)*1.51),var(--color) calc(var(--size)*1.51),var(--color) calc(var(--size)*2.51),transparent calc(var(--size)*2.51),transparent calc(var(--size)*3.51),var(--color) calc(var(--size)*3.51));
+background-color:var(--color2);
+background-size: calc(var(--size)*2.84) calc(var(--size)*2.84);
+}
+
+.zigzag{
+background:
+linear-gradient(135deg, var(--color) 25%, transparent 25%) calc(var(--size)*-1) 0,
+linear-gradient(225deg, var(--color) 25%, transparent 25%) calc(var(--size)*-1) 0,
+linear-gradient(315deg, var(--color) 25%, transparent 25%),
+linear-gradient(45deg, var(--color) 25%, transparent 25%);
+background-size: calc(var(--size)*2) calc(var(--size)*2);
+background-color: var(--color2);
+}
+
+.brick{
+background:
+linear-gradient(135deg, var(--color) 21px, var(--color2) 22px, var(--color2) 24px, transparent 24px, transparent 67px, var(--color2) 67px, var(--color2) 69px, transparent 69px),
+linear-gradient(225deg, var(--color) 21px, var(--color2) 22px, var(--color2) 24px, transparent 24px, transparent 67px, var(--color2) 67px, var(--color2) 69px, transparent 69px)0 64px;
+background-color:var(--color);
+background-size: 64px 128px;
+}
+
+.wave{
+/* background:
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: slategray;
+background-size:75px 100px;
+} */
+background:
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 21%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 21%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 34%, transparent 35%, transparent) 0 -50px;
+background-color: rgb(100, var(--hue),200);
+background-size:75px 100px;
+}
+
+.star{
+background:
+linear-gradient(324deg, var(--color) 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, var(--color) 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, var(--color2) 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, var(--color2) 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, var(--color2) 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, var(--color2) 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, var(--color) 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, var(--color) 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, var(--color2) 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, var(--color2) 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, var(--color2) 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, var(--color2) 7.5%, transparent 7.5%) 80px 73px;
+background-color: var(--color);
+background-size: 100px 100px;
+}
+
+.box{
+background-color:#556;
+background-image: linear-gradient(30deg, var(--color) 12%, transparent 12.5%, transparent 87%, var(--color) 87.5%, var(--color)),
+linear-gradient(150deg, var(--color) 12%, transparent 12.5%, transparent 87%, var(--color) 87.5%, var(--color)),
+linear-gradient(30deg, var(--color) 12%, transparent 12.5%, transparent 87%, var(--color) 87.5%, var(--color)),
+linear-gradient(150deg, var(--color) 12%, transparent 12.5%, transparent 87%, var(--color) 87.5%, var(--color)),
+linear-gradient(60deg, var(--color2) 25%, transparent 25.5%, transparent 75%, var(--color2) 75%, var(--color2)),
+linear-gradient(60deg, var(--color2) 25%, transparent 25.5%, transparent 75%, var(--color2) 75%, var(--color2));
+background-size: calc(var(--size)*4) calc(var(--size)*7);
+background-position: 0 0, 0 0, calc(var(--size)*2) calc(var(--size)*3.5), calc(var(--size)*2) calc(var(--size)*3.5), 0 0, calc(var(--size)*2) calc(var(--size)*3.5);
+}
+
+.stairs{
+background:
+linear-gradient(63deg, var(--color) 23%, transparent 23%)  calc(var(--size)*0.35) 0,
+linear-gradient(63deg, transparent 74%, var(--color) 78%),
+linear-gradient(63deg, transparent 34%, var(--color) 38%, var(--color) 58%, transparent 62%),
+var(--color2);
+background-size: calc(var(--size)*0.8)  calc(var(--size)*2.4);
+}
