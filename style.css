@@ -14,7 +14,7 @@
 h1{
   margin-top: 10px;
   margin-bottom: 8px;
-  margin-left: 200px; 
+  margin-left: 200px;
 }
 
 #mycanvas{
@@ -102,26 +102,6 @@ repeating-linear-gradient(45deg, var(--color2), var(--color2) calc(var(--size)/2
     repeating-linear-gradient(-45deg, var(--color), var(--color) calc(var(--size)/2), transparent 0, transparent var(--size)), repeating-linear-gradient(45deg, var(--color), var(--color) calc(var(--size)/2), transparent 0, transparent var(--size));
 }
 
-/* 縦半透明 */
-
-/* .check3{
-  background-image:
-   linear-gradient(-90deg, rgba(63, 171, 234, calc(var(--alpha)*0.01)) 50%, transparent 50%),
-    linear-gradient(rgba(253, 68, 119, calc(var(--alpha)*0.01)) 50%, transparent 50%);
-  background-size: var(--size) var(--size);
-} */
-/* .check3{
-  background-image:
-   linear-gradient(-90deg, rgba(63, var(--hue), var(--hue), calc(var(--alpha)*0.01)) 50%, transparent 50%),
-    linear-gradient(rgba(253, calc(255/var(--hue)), calc(var(--hue)/2), calc(var(--alpha)*0.01)) 50%, transparent 50%);
-  background-size: var(--size) var(--size);
-} */
-/* .check3{
-  background-image:
-   linear-gradient(-90deg, rgba(calc(255/var(--hue)*55), calc(255/var(--hue)*255), var(--hue), calc(var(--alpha)*0.01)) 50%, transparent 50%),
-    linear-gradient(rgba(var(--hue), calc(255/var(--hue)*55), calc(255/var(--hue)*155), calc(var(--alpha)*0.01)) 50%, transparent 50%);
-  background-size: var(--size) var(--size);
-} */
 .check3{
   background-image:
    linear-gradient(-90deg, rgba(calc(255/var(--hue)*5), var(--hue), calc(255/var(--hue)*100), calc(var(--alpha)*0.01)) 50%, transparent 50%),
@@ -167,26 +147,26 @@ repeating-linear-gradient(45deg, var(--color2), var(--color2) calc(var(--size)/2
 
 .circle1 {
   background: radial-gradient(4rem,
-    rgba(255,255,255,0) 80%, 
-    var(--color) 80%, var(--color) 99%, 
-    rgba(255,255,255, 0) 
+    rgba(255,255,255,0) 80%,
+    var(--color) 80%, var(--color) 99%,
+    rgba(255,255,255, 0)
     ) 0 0,
     radial-gradient(4rem,
-    rgba(255,255,255,0) 80%, 
-    var(--color) 80%, var(--color) 99%,  
-    rgba(255,255,255, 0) 
+    rgba(255,255,255,0) 80%,
+    var(--color) 80%, var(--color) 99%,
+    rgba(255,255,255, 0)
     ) 4em 4em,
     radial-gradient(4.7rem,
-    rgba(255,255,255,0) 50%, 
+    rgba(255,255,255,0) 50%,
     var(--color2) 50%,
-    var(--color2) 75%, var(--color2) 99%, 
-    rgba(255,255,255, 0) 
+    var(--color2) 75%, var(--color2) 99%,
+    rgba(255,255,255, 0)
     ) 4em 4em,
     radial-gradient(4.7rem,
-    rgba(255,255,255,0) 50%, 
+    rgba(255,255,255,0) 50%,
     var(--color2) 50%,
-    #F5FCD0 75%, var(--color2) 99%, 
-    rgba(255,255,255, 0) 
+    #F5FCD0 75%, var(--color2) 99%,
+    rgba(255,255,255, 0)
     ) 0 0;
   background-size: 8rem 8rem;
   background-color: #F5FCD0;
@@ -194,13 +174,6 @@ repeating-linear-gradient(45deg, var(--color2), var(--color2) calc(var(--size)/2
 
 /* 矢印 */
 .arrow1{
-  /* background:
-linear-gradient(45deg, var(--color) 45px, transparent 45px)64px 64px,
-linear-gradient(45deg, var(--color) 45px, transparent 45px,transparent 91px, var(--color2) 91px, var(--color2) 135px, transparent 135px),
-linear-gradient(-45deg, var(--color) 23px, transparent 23px, transparent 68px,var(--color) 68px,var(--color) 113px,transparent 113px,transparent 158px,var(--color) 158px);
-background-color:var(--color2);
-background-size: 128px 128px;
-} */
 background:
 linear-gradient(45deg, var(--color) var(--size), transparent var(--size))calc(var(--size)*1.42) calc(var(--size)*1.42),
 linear-gradient(45deg, var(--color) var(--size), transparent var(--size),transparent calc(var(--size)*2.02), var(--color2) calc(var(--size)*2.02), var(--color2) calc(var(--size)*3), transparent calc(var(--size)*3)),
@@ -228,12 +201,6 @@ background-size: 64px 128px;
 }
 
 .wave{
-/* background:
-radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
-radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
-background-color: slategray;
-background-size:75px 100px;
-} */
 background:
 radial-gradient(circle at 100% 50%, transparent 20%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 21%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 34%, transparent 35%, transparent),
 radial-gradient(circle at 0% 50%, transparent 20%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 21%, rgba(var(--hue),255,calc(255/var(--hue)*5),calc(var(--alpha)*0.01)) 34%, transparent 35%, transparent) 0 -50px;

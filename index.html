@@ -243,21 +243,10 @@
         document.getElementById("tranValue").innerText = tran;
         console.log(tran);
       });
-      // function tranChange(){
-      //   let tran = document.getElementById("transparency").value;
-      //   console.log(tran);
-      //   // tran.addEventListener('input', tranChange);
-      //   document.getElementById("transparency2").value = tran;
-      //   document.getElementById("transparency2").childNodes[0].data = tran;
-
-      //   ctx.globalAlpha = tran * 0.01;
-      // }
 
       $('.lineCap').change(function(){
         console.log($(this).val());
         ctx.lineCap = $(this).val();
-        // cap = document.getElementsByClassName("lineCap").value
-        // ctx.lineCap = "cap";
       });
 
       $('#save').click(function(){
