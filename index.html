@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"></style>
+  <title>Doodle</title>
+</head>
+<body>
+  <h1>☆彡オールマイティ自由帳☆彡</h1>
+  <canvas width="800" height="500" id="mycanvas">
+    Canvasに対応したブラウザを用意してください。
+  </canvas>
+  <p id="selection">
+    <select name="penColor" id="penColor" class="inSelection">
+      <option value="black">黒</option>
+      <option value="white">白</option>
+      <option value="red">赤</option>
+      <option value="blue">青</option>
+      <option value="yellow">黄色</option>
+      <option value="green">緑</option>
+      <option value="orange">オレンジ</option>
+      <option value="purple">紫</option>
+      <option value="gold">金色</option>
+      <option value="silver">銀色</option>
+      <option value="pink">ピンク</option>
+      <option value="lime">きみどり</option>
+      <option value="aqua">水色</option>
+      <option value="navy">紺</option>
+      <option value="maroon">茶色</option>
+      <option value="coral">コーラル</option>
+      <option value="ivory">アイボリー</option>
+      <option value="turquoise">ターコイズ</option>
+      <option value="plum">プラム</option>
+      <option value="cornflowerblue">勿忘草色</option>
+    </select>
+    <select name="penWidth" id="penWidth" class="inSelection">
+      <option value="1">細い</option>
+      <option value="2">やや細い</option>
+      <option value="3">中</option>
+      <option value="4">やや太い</option>
+      <option value="5">太い</option>
+      <option value="10">結構太い</option>
+      <option value="20">かなり太い</option>
+      <option value="30">太すぎ</option>
+      <option value="50">デブ</option>
+      <option value="0.1">極細</option>
+    </select>
+    <select name="penType" id="penType" class="inSelection">
+      <option value="default">矢印</option>
+      <option value="crosshair">十字</option>
+      <option value="pointer">指差し</option>
+      <option value="wait">待機中</option>
+      <option value="not-allowed">禁止</option>
+      <option value="all-scroll">スクロール</option>
+      <option value="zoom-in">ズーム</option>
+      <option value="grab">手</option>
+      <option value="grabbing">つかむくん</option>
+    </select>
+    <input type="button" id="erase" value="消去" class="inSelection">
+    <input type="button" id="save" value="ｷﾞｬﾗﾘｰ" class="inSelection">
+    <br><br>
+    <input type="color" id="fillcolor" value=""  class="inSelection">
+    <input type="button" id="fillbtn" value="塗りつぶす♡"  class="inSelection">
+    <br><br>
+    <th><small class="inSelection">◎パターン◎</small></th>
+    <td><select name="pattern" id="pattern" class="inSelection">
+      <option value="normal">通常</option>
+      <option value="stripe1">ストライプ(縦)</option>
+      <option value="stripe2">ストライプ(横)</option>
+      <option value="stripe3">ストライプ(斜め)</option>
+      <option value="stripe4">ストライプ(斜め2)</option>
+      <option value="dot1">水玉模様</option>
+      <option value="dot2">水玉模様2</option>
+      <option value="dot3">水玉模様(斜め)</option>
+      <option value="dot4">水玉模様(斜め2)</option>
+      <option value="check1">チェック</option>
+      <option value="check2">チェック(斜め)</option>
+      <option value="check3">※チェック(半透明)</option>
+      <option value="circle1">サークル</option>
+      <option value="arrow1">矢印</option>
+      <option value="zigzag">ジグザグ</option>
+      <option value="brick">レンガ</option>
+      <option value="wave">※波</option>
+      <option value="star">スター</option>
+      <option value="box">3D</option>
+      <option value="stairs">階段</option>
+      <option value="color-dodge">除算</option>
+      <option value="color-burn">焼き込み</option>
+      <option value="hard-light">ハードライト</option>
+      <option value="soft-light">ソフトライト</option>
+      <option value="difference">差の絶対値</option>
+      <option value="exclusion">除外</option>
+      <option value="hue">色相</option>
+      <option value="saturation">彩度</option>
+      <option value="color">カラー</option>
+      <option value="luminosity">輝度</option>
+    </select></td>
+    <input type="color" id="patternColor" value="#778691"  class="inSelection pattern">
+    <input type="color" id="patternColor2" value="#B1C2B3"  class="inSelection pattern">
+    <input type="number" name="patternSize" value="20" id="patternSize" class="inSelection pattern">
+    <br><br>
+    <small class="inSelection">※ﾊﾟﾀｰﾝ不透明度・色相</small>
+    <input type="range" name="alpha" min="0" max="100" value="50" id="alpha"  class="inSelection">
+    <input type="range" name="hue" min="1" max="250" value="150" id="hue"  class="inSelection">
+    <br><br><br><br>
+    <th><small class="inSelection">♪レイヤーモード♪</small></th>
+    <td><select name="layerStyle" id="layerStyle" class="inSelection">
+      <option value="source-over">通常</option>
+      <option value="source-in">source-in</option>
+      <option value="source-out">source-out</option>
+      <option value="source-atop">source-atop</option>
+      <option value="destination-over">destination-over</option>
+      <option value="destination-in">destination-in</option>
+      <option value="destination-out">destination-out</option>
+      <option value="destination-atop">destination-atop</option>
+      <option value="lighter">加算</option>
+      <option value="copy">コピペ</option>
+      <option value="xor">xor</option>
+      <option value="multiply">乗算</option>
+      <option value="screen">スクリーン</option>
+      <option value="overlay">オーバーレイ</option>
+      <option value="darken">暗くする</option>
+      <option value="lighten">明るくする</option>
+      <option value="color-dodge">除算</option>
+      <option value="color-burn">焼き込み</option>
+      <option value="hard-light">ハードライト</option>
+      <option value="soft-light">ソフトライト</option>
+      <option value="difference">差の絶対値</option>
+      <option value="exclusion">除外</option>
+      <option value="hue">色相</option>
+      <option value="saturation">彩度</option>
+      <option value="color">カラー</option>
+      <option value="luminosity">輝度</option>
+    </select></td>
+    <br><br>
+    <th><small class="inSelection">☆不透明度☆</small></th>
+    <td>
+      <input type="range" name="transparency" min="0" max="100" value="100" id="transparency"  class="inSelection transparency">
+    </td>
+    <td>
+      <progress value="" max="100" class="transparency" id="transparency2"></progress>
+      <span id="tranValue">100</span>%
+    </td>
+    <br><br>
+    <th><small class="inSelection">◆ペン先◆</small></th>
+    <input type="radio" name="lineCap" value="butt" class="lineCap" class="inSelection">標準
+    <input type="radio" name="lineCap" value="round" class="lineCap" class="inSelection">丸み
+    <input type="radio" name="lineCap" value="square" class="lineCap" class="inSelection">四角
+    <br><br>
+  </p>
+
+  <div id="gallery"></div>
+
+  <script src="jquery-3.6.0.js"></script>
+  <script>
+    $(function(){
+
+      let canvas = document.getElementById('mycanvas');
+      if (!canvas || !canvas.getContext) return false;
+      let ctx = canvas.getContext('2d');
+
+      let startX,startY,x,y,borderWidth = 5;
+      isDrawing = false;
+      console.log("it works!")
+
+      $('#mycanvas').mousedown(function(e){
+        isDrawing = true;
+        startX = e.pageX - $(this).offset().left - borderWidth;
+        startY = e.pageY - $(this).offset().top - borderWidth;
+      })
+      .mousemove(function(e){
+        if (!isDrawing) return;
+        x = e.pageX - $(this).offset().left - borderWidth;
+        y = e.pageY - $(this).offset().top - borderWidth;
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        startX = x;
+        startY = y;
+      })
+      .mouseup(function(){
+        isDrawing = false;
+      })
+      .mouseleave(function(){
+        isDrawing = false;
+      });
+
+      console.log("it works! 2")
+
+      $('#penColor').change(function(){
+        ctx.strokeStyle = $(this).val();
+      });
+      $('#penWidth').change(function(){
+        ctx.lineWidth = $(this).val();
+      });
+      $('#penType').change(function(){
+        document.getElementById("mycanvas").style.cursor = $(this).val();
+      });
+      $('#erase').click(function(){
+        if(!confirm('本当に消去しますか？'))return;
+          erasepat = document.getElementById("pattern").value;
+          $('#mycanvas').removeClass(erasepat);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+      $('#fillbtn').click(function(){
+        if(!confirm('塗りつぶしますか？'))return;
+        fillCol = document.getElementById("fillcolor").value;
+        ctx.fillStyle = fillCol;
+        console.log(fillCol);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      });
+      $('#pattern').change(function(){
+        pattern = document.getElementById("pattern").value;
+        patCol = document.getElementById("patternColor").value;
+        patCol2 = document.getElementById("patternColor2").value;
+        patSize = document.getElementById("patternSize").value;
+        alpha = document.getElementById("alpha").value;
+        hue = document.getElementById("hue").value;
+        $(':root').css("--color", patCol);
+        $(':root').css("--color2", patCol2);
+        $(':root').css("--size", patSize + 'px');
+        $(':root').css("--alpha", alpha);
+        $(':root').css("--hue", hue);
+        ctx.fillStyle = $('#mycanvas').addClass(pattern);
+        console.log(pattern);
+        console.log(patCol);
+        console.log(patSize);
+        console.log(alpha);
+        console.log(hue);
+      });
+      $('#layerStyle').change(function(){
+        layer = document.getElementById("layerStyle").value;
+        ctx.globalCompositeOperation = layer;
+        console.log(layer);
+      });
+      $('#transparency').change(function(){
+        tran = document.getElementById("transparency").value;
+        ctx.globalAlpha = tran * 0.01;
+        document.getElementById("transparency2").value = tran;
+        document.getElementById("tranValue").innerText = tran;
+        console.log(tran);
+      });
+      // function tranChange(){
+      //   let tran = document.getElementById("transparency").value;
+      //   console.log(tran);
+      //   // tran.addEventListener('input', tranChange);
+      //   document.getElementById("transparency2").value = tran;
+      //   document.getElementById("transparency2").childNodes[0].data = tran;
+
+      //   ctx.globalAlpha = tran * 0.01;
+      // }
+
+      $('.lineCap').change(function(){
+        console.log($(this).val());
+        ctx.lineCap = $(this).val();
+        // cap = document.getElementsByClassName("lineCap").value
+        // ctx.lineCap = "cap";
+      });
+
+      $('#save').click(function(){
+        let img = $('<img>').attr({
+          width: 125,
+          height: 80,
+          src: canvas.toDataURL()
+        });
+        let link = $('<a>').attr({
+          href: canvas.toDataURL().replace('image/png', 'application/octet-stream'),
+          download: new Date().getTime() + '.png'
+        });
+        $('#gallery').append(link.append(img.addClass('thumbnail')));
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+    });
+
+
+
+
+
+
+  </script>
+</body>
+</html>
